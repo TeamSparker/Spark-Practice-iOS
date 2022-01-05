@@ -11,9 +11,16 @@ import KakaoSDKUser
 class LogoutViewController: UIViewController {
     var nickname: String?
     var email: String?
+    var userId: Int64?
+    var birthday: String?
+    var urlString = "https://archijude.tistory.com/183"
+    var profile: URL?
 
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var userIdLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +63,16 @@ extension LogoutViewController {
     func setText(){
         nicknameLabel.text = nickname
         emailLabel.text = email
+        userIdLabel.text = "\(userId)"
+        birthdayLabel.text = birthday
+        
+        let url = profile!
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                self.profileImageView.image = UIImage(data: data!)
+            }
+        }
+        
     }
 }
