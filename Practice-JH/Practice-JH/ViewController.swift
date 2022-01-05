@@ -21,6 +21,30 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // 토큰을 가지고 있는지 검사하여 logoutVC에서 pop되었을 때 상태에 따라 다시 돌아가게 만듬
+        if (AuthApi.hasToken()) {
+            UserApi.shared.accessTokenInfo { (_, error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+                        //로그인 필요
+                    }
+                    else {
+                        //기타 에러
+                    }
+                }
+                else {
+                    // 토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
+                    print("토큰 유효성 체크 성공")
+                    
+                    // ✅ 사용자 정보를 가져오고 화면전환을 하는 커스텀 메서드
+                    self.getUserInfo()
+                }
+            }
+        }
+        else {
+            //로그인 필요
+        }
     }
 
     @IBAction func touchTalkLogin(_ sender: Any) {
