@@ -8,5 +8,6 @@ target 'Practice-JH' do
   # Pods for Practice-JH
   pod 'KakaoSDKUser' # 카카오 로그인
   pod 'KakaoSDKUser' # 사용자 관리
+  pod 'KakaoSDKCommon'
 
 end
