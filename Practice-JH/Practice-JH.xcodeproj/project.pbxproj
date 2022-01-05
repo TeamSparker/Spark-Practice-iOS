@@ -56,7 +56,6 @@
 				828D371EE834245581318F0A /* Pods-Practice-JH.debug.xcconfig */,
 				AD647D329912BCC2792AB3E1 /* Pods-Practice-JH.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
