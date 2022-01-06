@@ -13,6 +13,7 @@
 		2BF528532787566C0010B38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF528512787566C0010B38C /* Main.storyboard */; };
 		2BF528552787566D0010B38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF528542787566D0010B38C /* Assets.xcassets */; };
 		2BF528582787566D0010B38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF528562787566D0010B38C /* LaunchScreen.storyboard */; };
+		2BF528602787581D0010B38C /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5285F2787581D0010B38C /* Stopwatch.swift */; };
 		B7C8CDAFA707B308DB91A233 /* Pods_Stopwatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC36BEE3D8387897F04C0D5 /* Pods_Stopwatch.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		2BF528542787566D0010B38C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BF528572787566D0010B38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BF528592787566D0010B38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF5285F2787581D0010B38C /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		5DC36BEE3D8387897F04C0D5 /* Pods_Stopwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stopwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C90287B9E5E78395EE4449 /* Pods-Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.release.xcconfig"; path = "Target Support Files/Pods-Stopwatch/Pods-Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		F40D161BDF3690AC0612C624 /* Pods-Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.debug.xcconfig"; path = "Target Support Files/Pods-Stopwatch/Pods-Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				2BF5284B2787566C0010B38C /* AppDelegate.swift */,
 				2BF5284D2787566C0010B38C /* SceneDelegate.swift */,
 				2BF5284F2787566C0010B38C /* ViewController.swift */,
+				2BF5285F2787581D0010B38C /* Stopwatch.swift */,
 				2BF528512787566C0010B38C /* Main.storyboard */,
 				2BF528542787566D0010B38C /* Assets.xcassets */,
 				2BF528562787566D0010B38C /* LaunchScreen.storyboard */,
@@ -80,7 +83,6 @@
 				F40D161BDF3690AC0612C624 /* Pods-Stopwatch.debug.xcconfig */,
 				F3C90287B9E5E78395EE4449 /* Pods-Stopwatch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,6 +212,7 @@
 				2BF528502787566C0010B38C /* ViewController.swift in Sources */,
 				2BF5284C2787566C0010B38C /* AppDelegate.swift in Sources */,
 				2BF5284E2787566C0010B38C /* SceneDelegate.swift in Sources */,
+				2BF528602787581D0010B38C /* Stopwatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
