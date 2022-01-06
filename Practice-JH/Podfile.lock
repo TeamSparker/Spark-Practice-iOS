@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.4)
+  - JJFloatingActionButton (2.5.0)
   - KakaoSDKAuth (2.8.4):
     - KakaoSDKCommon (= 2.8.4)
   - KakaoSDKCommon (2.8.4):
@@ -13,22 +14,25 @@ PODS:
     - KakaoSDKAuth (= 2.8.4)
 
 DEPENDENCIES:
+  - JJFloatingActionButton
   - KakaoSDKCommon
   - KakaoSDKUser
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JJFloatingActionButton
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
   KakaoSDKAuth: b9b693995f98b1821ccd22b39d383e1dede5ca45
   KakaoSDKCommon: 33c9902ee9ce13e9d1cac3549896406229836ff5
   KakaoSDKUser: d878977e0ba6b365cfeac3b6319cdf4231713bea
 
-PODFILE CHECKSUM: cf4a938ceb4415e66e1c9c249ea342ba3f940cc0
+PODFILE CHECKSUM: 3914d84ab915ad513acd0dceec2b9f938eee3c2b
 
 COCOAPODS: 1.11.2
