@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        appleIDProvider.getCredentialState(forUserID: UserDefaults.standard.string(forKey: "setUserIdentifier") ?? "") { credentialState, error in
+            switch credentialState {
+            case .authorized:
+                // Apple ID Credential is valid
+                // 로그인된 상태 -> 홈뷰
+                print("해당 ID는 연동되어 있습니다.")
+            case .revoked:
+                // Apple ID Credential revoked, handle unlink
+                // 로그아웃된 상태 -> 로그인뷰
+                print("해당 ID는 연동되어 있지 않습니다.")
+            case .notFound:
+                // Credential not found, show login UI
+                // 잘못된 userIdentifier -> 로그인뷰
+                print("해당 ID를 찾을 수 없습니다.")
+            default:
+                break
+            }
+        }
+        
         return true
     }
 

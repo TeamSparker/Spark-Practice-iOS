@@ -94,6 +94,7 @@ extension ViewController: ASAuthorizationControllerDelegate {
             }
             
             print("useridentifier: \(userIdentifier)")
+            UserDefaults.standard.set(userIdentifier, forKey: "setUserIdentifier")
 
             nameLabel.text = UserDefaults.standard.string(forKey: "setFullName")
             emailLabel.text = UserDefaults.standard.string(forKey: "setEmail")
