@@ -150,20 +150,23 @@ extension ViewController {
     
     func setFloatingButton(){
         let actionButton = JJFloatingActionButton()
-
-        actionButton.addItem(title: "item 1", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
-          // do something
+        let spark_red_color: UIColor = UIColor(red: 1, green: 0, blue: 0.24, alpha: 1)
+        
+        actionButton.addItem(title: "방 만들기", image: UIImage(named: "floating_room_icon")?.withRenderingMode(.alwaysTemplate)) { item in
+            // 클릭 action 부분
         }
-
-        actionButton.addItem(title: "item 2", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
-          // do something
+        
+        actionButton.addItem(title: "코드로 참여", image: UIImage(named: "floating_code_icon")?.withRenderingMode(.alwaysTemplate)) { item in
+            // 클릭 action 부분
         }
-
-        actionButton.addItem(title: "item 3", image: nil) { item in
-          // do something
+        
+        actionButton.configureDefaultItem { item in
+            item.buttonColor = spark_red_color
+            item.buttonImageColor = .white
         }
-
+        
         self.view.addSubview(actionButton)
+        actionButton.buttonColor = spark_red_color
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
