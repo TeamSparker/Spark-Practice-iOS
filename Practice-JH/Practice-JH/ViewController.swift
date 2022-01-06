@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKUser
 import KakaoSDKAuth
 import KakaoSDKCommon
+import JJFloatingActionButton
 
 class ViewController: UIViewController {
 
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
                 print("unlink() success.")
             }
         }
+        
+        setFloatingButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,8 +67,6 @@ class ViewController: UIViewController {
     @IBAction func touchAccountLogin(_ sender: Any) {
         loginKakaoAccount()
     }
-    
-    
 }
 
 extension ViewController {
@@ -145,6 +146,27 @@ extension ViewController {
                 self.getUserInfo()
             }
         }
+    }
+    
+    func setFloatingButton(){
+        let actionButton = JJFloatingActionButton()
+
+        actionButton.addItem(title: "item 1", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
+          // do something
+        }
+
+        actionButton.addItem(title: "item 2", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
+          // do something
+        }
+
+        actionButton.addItem(title: "item 3", image: nil) { item in
+          // do something
+        }
+
+        self.view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
     }
 }
 

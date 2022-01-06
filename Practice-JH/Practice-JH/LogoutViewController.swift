@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKUser
+import JJFloatingActionButton
 
 class LogoutViewController: UIViewController {
     var nickname: String?
@@ -75,4 +76,5 @@ extension LogoutViewController {
         }
         
     }
+
 }
