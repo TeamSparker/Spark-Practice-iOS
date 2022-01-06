@@ -11,6 +11,8 @@ class CarouselVC: UIViewController {
     
     @IBOutlet weak var carouselCV: UICollectionView!
     
+    let imageNames: [String] = ["cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +54,7 @@ extension CarouselVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCVC", for: indexPath) as! carouselCVC
 
-        cell.customView.image = UIImage(named: "chatButton")
+        cell.customView.image = UIImage(named: imageNames[indexPath.row])
         return cell
     }
 }
