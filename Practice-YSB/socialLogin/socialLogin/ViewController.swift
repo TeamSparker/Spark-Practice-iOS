@@ -7,7 +7,11 @@
 
 import UIKit
 
+import AuthenticationServices
+
 class ViewController: UIViewController {
+    
+    let appleLoginButton = ASAuthorizationAppleIDButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
