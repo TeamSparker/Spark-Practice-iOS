@@ -17,6 +17,7 @@
 		EB88495E2786110A008823B7 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88495D2786110A008823B7 /* LogoutViewController.swift */; };
 		EBD3E1D0278783520088FB97 /* Carousel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD3E1CF278783520088FB97 /* Carousel.storyboard */; };
 		EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D1278783760088FB97 /* CarouselVC.swift */; };
+		EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D827878E330088FB97 /* carouselCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		EB88495D2786110A008823B7 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		EBD3E1CF278783520088FB97 /* Carousel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carousel.storyboard; sourceTree = "<group>"; };
 		EBD3E1D1278783760088FB97 /* CarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselVC.swift; sourceTree = "<group>"; };
+		EBD3E1D827878E330088FB97 /* carouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselCVC.swift; sourceTree = "<group>"; };
 		F3C2104A10DF938CAC0A82CE /* Pods_Practice_JH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice_JH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,9 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				EBD3E1CF278783520088FB97 /* Carousel.storyboard */,
+				EBD3E1D727878B420088FB97 /* CarouselCVC */,
 				EBD3E1D1278783760088FB97 /* CarouselVC.swift */,
 			);
 			path = carousel;
+			sourceTree = "<group>";
+		};
+		EBD3E1D727878B420088FB97 /* CarouselCVC */ = {
+			isa = PBXGroup;
+			children = (
+				EBD3E1D827878E330088FB97 /* carouselCVC.swift */,
+			);
+			path = CarouselCVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +237,7 @@
 			files = (
 				EB88494A27857B4B008823B7 /* ViewController.swift in Sources */,
 				EB88494627857B4B008823B7 /* AppDelegate.swift in Sources */,
+				EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */,
 				EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */,
 				EB88495E2786110A008823B7 /* LogoutViewController.swift in Sources */,
 				EB88494827857B4B008823B7 /* SceneDelegate.swift in Sources */,
