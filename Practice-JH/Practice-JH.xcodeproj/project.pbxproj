@@ -18,6 +18,7 @@
 		EBD3E1D0278783520088FB97 /* Carousel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD3E1CF278783520088FB97 /* Carousel.storyboard */; };
 		EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D1278783760088FB97 /* CarouselVC.swift */; };
 		EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D827878E330088FB97 /* carouselCVC.swift */; };
+		EBD3E1DB27883CE40088FB97 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EBD3E1CF278783520088FB97 /* Carousel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carousel.storyboard; sourceTree = "<group>"; };
 		EBD3E1D1278783760088FB97 /* CarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselVC.swift; sourceTree = "<group>"; };
 		EBD3E1D827878E330088FB97 /* carouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselCVC.swift; sourceTree = "<group>"; };
+		EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
 		F3C2104A10DF938CAC0A82CE /* Pods_Practice_JH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice_JH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				EBD3E1CF278783520088FB97 /* Carousel.storyboard */,
 				EBD3E1D727878B420088FB97 /* CarouselCVC */,
 				EBD3E1D1278783760088FB97 /* CarouselVC.swift */,
+				EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */,
 			);
 			path = carousel;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB88494A27857B4B008823B7 /* ViewController.swift in Sources */,
+				EBD3E1DB27883CE40088FB97 /* CarouselLayout.swift in Sources */,
 				EB88494627857B4B008823B7 /* AppDelegate.swift in Sources */,
 				EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */,
 				EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */,
