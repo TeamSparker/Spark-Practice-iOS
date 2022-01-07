@@ -11,10 +11,11 @@ class carouselCVC: UICollectionViewCell {
     let customView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 12
+        view.layer.cornerRadius = 2
+        view.clipsToBounds = true
+        
         return view
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
