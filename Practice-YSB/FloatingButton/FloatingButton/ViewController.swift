@@ -17,7 +17,7 @@ class ViewController: BaseViewController {
     let titleLabel = UILabel()
     let subTitleLabel = UILabel()
     let actionButton = JJFloatingActionButton()
-    var isClicked: Bool = false /// 버튼이 눌렸는지 확인을 위한 프로퍼티
+    let tap = UITapGestureRecognizer()
 
     // MARK: - View Life Cycles
     
@@ -40,6 +40,10 @@ class ViewController: BaseViewController {
         
         subTitleLabel.text = "화이팅"
         subTitleLabel.textColor = .gray
+        
+        /// gesture 지정할 요소 외의 모든 다른 부분의 touch도 받아들이도록 false 설정
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override func setLayout() {
@@ -80,6 +84,8 @@ class ViewController: BaseViewController {
         actionButton.buttonImageColor = .white
         /// 버튼 이미지 크기
         actionButton.buttonImageSize = CGSize(width: 24, height: 24)
+        /// 버튼 탭했을 때 순간 컬러
+        actionButton.highlightedButtonColor = .orange
         /// item 버튼 크기
         actionButton.itemSizeRatio = CGFloat(1)
         /// item 버튼 추가
@@ -103,20 +109,19 @@ class ViewController: BaseViewController {
         actionButton.layer.shadowRadius = CGFloat(10)
     }
     
-    /// actionButton을 클릭했을 때, isClicked 값에 따라 버튼 컬러 재설정 시도
     func setAddTarget() {
         actionButton.addTarget(self, action: #selector(setButtonColor), for: .touchUpInside)
+        tap.addTarget(self, action: #selector(setButtonColor))
     }
     
+    /// actionButton을 클릭했을 때, buttonState.rawValue 값에 따라 버튼 컬러 재설정 시도
     @objc
     func setButtonColor() {
-        print("버튼 눌림")
-        if !isClicked {
+        /// buttonState == 2 -> 플로팅 버튼 안펼쳐진 상태
+        if actionButton.buttonState.rawValue == 2 {
             actionButton.buttonColor = .red
-            isClicked = true
         } else {
             actionButton.buttonColor = .purple
-            isClicked = false
         }
     }
 }
