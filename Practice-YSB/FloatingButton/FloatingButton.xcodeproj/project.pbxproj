@@ -14,6 +14,7 @@
 		2B7BD2DF2787F87B007B5381 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BD2DD2787F87B007B5381 /* Main.storyboard */; };
 		2B7BD2E12787F87C007B5381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BD2E02787F87C007B5381 /* Assets.xcassets */; };
 		2B7BD2E42787F87C007B5381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BD2E22787F87C007B5381 /* LaunchScreen.storyboard */; };
+		2B7BD2EC2787FD7A007B5381 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7BD2EB2787FD7A007B5381 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2B7BD2E02787F87C007B5381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B7BD2E32787F87C007B5381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B7BD2E52787F87C007B5381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B7BD2EB2787FD7A007B5381 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6DFC05C107EDD55D1B52F2B0 /* Pods_FloatingButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloatingButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980EDEC8FBA13862A7F2A698 /* Pods-FloatingButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatingButton.release.xcconfig"; path = "Target Support Files/Pods-FloatingButton/Pods-FloatingButton.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 				2B7BD2D72787F87B007B5381 /* AppDelegate.swift */,
 				2B7BD2D92787F87B007B5381 /* SceneDelegate.swift */,
 				2B7BD2DB2787F87B007B5381 /* ViewController.swift */,
+				2B7BD2EB2787FD7A007B5381 /* BaseViewController.swift */,
 				2B7BD2DD2787F87B007B5381 /* Main.storyboard */,
 				2B7BD2E02787F87C007B5381 /* Assets.xcassets */,
 				2B7BD2E22787F87C007B5381 /* LaunchScreen.storyboard */,
@@ -88,7 +91,6 @@
 				130E0986594C52A6E93572FC /* Pods-FloatingButton.debug.xcconfig */,
 				980EDEC8FBA13862A7F2A698 /* Pods-FloatingButton.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7BD2DC2787F87B007B5381 /* ViewController.swift in Sources */,
+				2B7BD2EC2787FD7A007B5381 /* BaseViewController.swift in Sources */,
 				2B7BD2D82787F87B007B5381 /* AppDelegate.swift in Sources */,
 				2B7BD2DA2787F87B007B5381 /* SceneDelegate.swift in Sources */,
 			);
