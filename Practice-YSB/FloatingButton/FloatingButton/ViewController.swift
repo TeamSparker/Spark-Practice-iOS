@@ -17,6 +17,7 @@ class ViewController: BaseViewController {
     let titleLabel = UILabel()
     let subTitleLabel = UILabel()
     let actionButton = JJFloatingActionButton()
+    var isClicked: Bool = false /// 버튼이 눌렸는지 확인을 위한 프로퍼티
 
     // MARK: - View Life Cycles
     
@@ -25,6 +26,7 @@ class ViewController: BaseViewController {
         
         /// BaseViewController를 상속받기 때문에, BaseViewController에서 viewDidLoad()에 넣어둔 함수는 다시 안넣어도 적용O
         setButtonUI()
+        setAddTarget()
     }
 
     // MARK: - Method
@@ -101,6 +103,21 @@ class ViewController: BaseViewController {
         actionButton.layer.shadowRadius = CGFloat(10)
     }
     
+    /// actionButton을 클릭했을 때, isClicked 값에 따라 버튼 컬러 재설정 시도
+    func setAddTarget() {
+        actionButton.addTarget(self, action: #selector(setButtonColor), for: .touchUpInside)
+    }
     
+    @objc
+    func setButtonColor() {
+        print("버튼 눌림")
+        if !isClicked {
+            actionButton.buttonColor = .red
+            isClicked = true
+        } else {
+            actionButton.buttonColor = .purple
+            isClicked = false
+        }
+    }
 }
 
