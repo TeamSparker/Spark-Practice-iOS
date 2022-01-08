@@ -88,7 +88,6 @@ class CarouselLayout: UICollectionViewFlowLayout {
         var fakescale = (492/520-scale)*(520/28)
         // realscale은 중심에서 0, 멀어졌을 때 -1
         var realscale = (-1-fakescale)*0.5
-        print(realscale)
         
         let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
         let dist = attributes.frame.midX - visibleRect.midX
@@ -96,7 +95,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
         
         // 1이 한 바퀴 회전이다. 360도임
         // CATransform은 한 번에 하나씩만 사용 가능하다.
-        transform = CATransform3DMakeRotation(realscale*8, 0, 1, 0)
+//        transform = CATransform3DMakeRotation(realscale*8, 0, 1, 0)
         
         // 마지막 인자는 z좌표이고, 각 셀이 어떤 셀의 위에 있을지 아닐지를 결정한다. 아래 코드는 거리가 멀수록 화면에서 뒤로 가게끔 만든다(우리가 화면을 바라본다고 가정할 때). +값이라면 우리 눈 앞으로 다가오는 것이다.
         transform = CATransform3DTranslate(transform, 0, 0, -abs(dist/1000))
@@ -106,19 +105,33 @@ class CarouselLayout: UICollectionViewFlowLayout {
     }
     
     // MARK: 페이징 가능하게 해주는 코드
+    // 이 함수는 현재 스크롤의 방향과 속력을 고려하여 스크롤을 멈출 ContentOffset을 지정해준다. 따라서, 멈추길 원하는 목적하는 CGPoint를 함수 내에서 반환해주면 된다.
+    // 우리는 각 셀의 center와, 컬렉션뷰의 center를 일치시키고자 한다.
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
 
+        
             guard let collectionView = self.collectionView else {
                 let latestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
+                print(latestOffset)
                 return latestOffset
             }
-
+        
+            // print(targetRect)를 통해 targertRect가 하나만 생성된다는 것을 확인했다. 컨텐츠가 멈추기 원하는 목표지점에 rect를 생성해주는 코드이다. 우리는, 이 rect에 포함되는 셀들 중에 컬렉션뷰의 중심에 가장 가까이 있는 셀의 중심에 멈춰야 한다.
             let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
+        
+            // layoutAttrbutesForeElemets는 parameter로 취하는 targetRect의 범위 안에 있는 셀들의 UICollectionViewLayoutAttributes를 반환해준다. 따라서, Rect의 위치에 따라 2개 셀의 레이아웃 애트리뷰트들이 반환되거나, 3개 셀의 레이아웃 애트리뷰트들이 반환된다.
+            // targetRect의 width를 2000으로 늘린다면? -> 2000의 범위 안에 있는 셀들의 속성이 반환된다.
             guard let rectAttributes = super.layoutAttributesForElements(in: targetRect) else { return .zero }
-
+        
+            // finite number란, 무한보다 작은 셀 수 있는 숫자이다. 여기에 greatest가 붙어서, 가장 큰 양의 숫자를 반환한다. 시스템 상에서 가장 큰 소수의 값이다. _MAX를 생각하면 된다.
             var offsetAdjustment = CGFloat.greatestFiniteMagnitude
+        
+            // horizontalCenter는 컨텐츠오프셋의 x좌표에 컬렉션뷰의 절반을 더해서 새로운 목표지점이 될 x좌표를 만들어준다.
             let horizontalCenter = proposedContentOffset.x + collectionView.frame.width / 2
 
+            // 여러 개 셀의 레이아웃 속성들을 비교하여,
+            // magnitude는 소수의 절대값을 말한다. 즉, (itemHorizontalCenter - horizontalCenter).magnitude는 변위를 거리로 바꿔준다.
+            // if 문의 역할은, 두 개의 셀 중에서 컬렉션뷰 중심까지의 거리가 더 가까운 셀의 거리를 offsetAdjustment에 저장해주는 것이다. if문 안의 대입값에는 magnitude가 없는데, 이는 -값과 +값(변위)을 모두 사용해야 하기 때문이다.
             for layoutAttributes in rectAttributes {
                 let itemHorizontalCenter = layoutAttributes.center.x
                 if (itemHorizontalCenter - horizontalCenter).magnitude < offsetAdjustment.magnitude {
@@ -126,7 +139,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
                 }
             }
         
-            //proposedContentOffset을 조절하여 멈추기 원하는 점을 조절가능하다.
+            // 이렇게 원래 스크롤 시 멈추려던 좌표에서, 조정될 변위를 더해줘서 셀의 중심과 컬렉션뷰의 중심을 일치시켜주면 페이징과 같이 기능하게 된다.
             return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
         }
 }

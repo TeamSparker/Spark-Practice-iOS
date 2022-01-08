@@ -40,7 +40,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Carousel로 이동"/>
                                 <connections>
-                                    <action selector="touchAccountLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CVs-QH-Uz7"/>
                                     <action selector="touchPresentCarousel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xh6-9z-2G8"/>
                                 </connections>
                             </button>
