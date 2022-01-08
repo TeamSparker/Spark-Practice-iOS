@@ -11,9 +11,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        picker.delegate = self
     }
 
     @IBAction func getPhotoImage(_ sender: Any) {
@@ -35,6 +38,10 @@ class ViewController: UIViewController {
         
         present(alter, animated: true, completion: nil)
     }
+    
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 }
 
