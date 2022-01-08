@@ -1,0 +1,20 @@
+PODS:
+  - JJFloatingActionButton (2.5.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - JJFloatingActionButton
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - JJFloatingActionButton
+    - SnapKit
+
+SPEC CHECKSUMS:
+  JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 2664582dfab0b1714414828d663ec2ebd9706ba3
+
+COCOAPODS: 1.11.2
