@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>test</string>
+	<string>카메라를 열어도 될까요?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>test</string>
+	<string>앨범을 열어봐도 될까요?</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
