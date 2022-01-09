@@ -13,6 +13,8 @@
 		2B0237B3278B3E4000C87068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0237B1278B3E4000C87068 /* Main.storyboard */; };
 		2B0237B5278B3E4100C87068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0237B4278B3E4100C87068 /* Assets.xcassets */; };
 		2B0237B8278B3E4100C87068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0237B6278B3E4100C87068 /* LaunchScreen.storyboard */; };
+		2B0237C0278B4DB600C87068 /* CustomCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0237BF278B4DB600C87068 /* CustomCVC.swift */; };
+		2B0237C2278B574A00C87068 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0237C1278B574A00C87068 /* CustomHeaderView.swift */; };
 		61A7EF370059FF6E6FB8D4CB /* Pods_StickyHeader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AAC2E36EA0BC4E05609729 /* Pods_StickyHeader.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		2B0237B4278B3E4100C87068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B0237B7278B3E4100C87068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B0237B9278B3E4100C87068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B0237BF278B4DB600C87068 /* CustomCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCVC.swift; sourceTree = "<group>"; };
+		2B0237C1278B574A00C87068 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		FC6368CF98714B7CAE5F14B8 /* Pods-StickyHeader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeader.release.xcconfig"; path = "Target Support Files/Pods-StickyHeader/Pods-StickyHeader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +52,6 @@
 				1046633DFD7599C6119B3938 /* Pods-StickyHeader.debug.xcconfig */,
 				FC6368CF98714B7CAE5F14B8 /* Pods-StickyHeader.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +87,8 @@
 				2B0237AB278B3E4000C87068 /* AppDelegate.swift */,
 				2B0237AD278B3E4000C87068 /* SceneDelegate.swift */,
 				2B0237AF278B3E4000C87068 /* ViewController.swift */,
+				2B0237C1278B574A00C87068 /* CustomHeaderView.swift */,
+				2B0237BF278B4DB600C87068 /* CustomCVC.swift */,
 				2B0237B1278B3E4000C87068 /* Main.storyboard */,
 				2B0237B4278B3E4100C87068 /* Assets.xcassets */,
 				2B0237B6278B3E4100C87068 /* LaunchScreen.storyboard */,
@@ -207,7 +212,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0237C2278B574A00C87068 /* CustomHeaderView.swift in Sources */,
 				2B0237B0278B3E4000C87068 /* ViewController.swift in Sources */,
+				2B0237C0278B4DB600C87068 /* CustomCVC.swift in Sources */,
 				2B0237AC278B3E4000C87068 /* AppDelegate.swift in Sources */,
 				2B0237AE278B3E4000C87068 /* SceneDelegate.swift in Sources */,
 			);
@@ -359,7 +366,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L9D5M5DM3Y;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StickyHeader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -388,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L9D5M5DM3Y;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StickyHeader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
