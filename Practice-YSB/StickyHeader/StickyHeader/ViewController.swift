@@ -21,10 +21,6 @@ class ViewController: UIViewController {
         
         setLayout()
         setCollcetionView()
-        
-        /// statusBar 높이 확인용
-        print(UIApplication.shared.statusBarFrame.height)
-        print(view.window?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 9)
     }
     
     // MARK: - Methods
@@ -32,9 +28,7 @@ class ViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
-            // TODO: - statusBarFrame 대체
-            make.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
-            make.leading.bottom.trailing.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
