@@ -10,9 +10,8 @@ import UIKit
 class CarouselVC: UIViewController {
     
     @IBOutlet weak var carouselCV: UICollectionView!
-    var isClicked: Bool = false
+    private var isClicked: Bool = false
 
-    
     let imageNames: [String] = ["cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four"]
     
     override func viewDidLoad() {
@@ -33,6 +32,7 @@ class CarouselVC: UIViewController {
 
         let layout = CarouselLayout()
         
+        // TODO: 컬렉션뷰 자체의 비율을 고정하는 작업 하기
         // 현재 페이지의 크기 비율을 지정, 피그마 참고했습니다.
         let centerItemWidthScale: CGFloat = 327/375
         let centerItemHeightScale: CGFloat = 1
@@ -43,7 +43,6 @@ class CarouselVC: UIViewController {
         layout.spacing = 12
         layout.sideItemAlpha = 0.4
         layout.animationStatus = status
-        print(layout.animationStatus)
         carouselCV.collectionViewLayout = layout
             
         self.carouselCV?.register(carouselCVC.self, forCellWithReuseIdentifier: "carouselCVC")
@@ -51,26 +50,20 @@ class CarouselVC: UIViewController {
         self.carouselCV?.reloadData()
     }
     
+    // 버튼을 터치함에 따라서 animationStatus을 변경해준다.
     @IBAction func touchChangeAnimation(_ sender: Any) {
         if !isClicked {
             isClicked = true
-            setAnimationStyle(isClicked)
+            addCollectionView(isClicked)
         } else {
             isClicked = false
-            setAnimationStyle(isClicked)
+            addCollectionView(isClicked)
         }
     }
     
-    func setAnimationStyle(_ type: Bool) {
-        addCollectionView(type)
-    }
 }
 
 extension CarouselVC: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//       return UIEdgeInsets(top: 100, left: 30, bottom: 100, right: 30)
-//    }
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

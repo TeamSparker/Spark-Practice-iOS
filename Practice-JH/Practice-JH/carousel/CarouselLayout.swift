@@ -12,6 +12,8 @@ class CarouselLayout: UICollectionViewFlowLayout {
     public var sideItemScale: CGFloat = 0.5
     public var sideItemAlpha: CGFloat = 0.5
     public var spacing: CGFloat = 10
+    
+    // animaition 전환에 사용하는 변수
     public var animationStatus: Bool = true
 
     public var isPagingEnabled: Bool = false
@@ -89,17 +91,17 @@ class CarouselLayout: UICollectionViewFlowLayout {
         let dist = attributes.frame.midX - visibleRect.midX
         var transform = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
         
+        // fakescale은 중심에서 -1, 멀어졌을 때 1 / realscale은 중심에서 0, 멀어졌을 때 -1
+        // CA로테이션 함수에서 1이 한 바퀴 회전이다. 360도임.
+        // CATransform은 한 번에 하나씩만 사용 가능하다.
         switch animationStatus{
+        // 회전시키는 경우
         case true:
-            // fakescale은 중심에서 -1, 멀어졌을 때 1
             let fakescale = (492/520-scale)*(520/28)
-            // realscale은 중심에서 0, 멀어졌을 때 -1
             let realscale = (-1-fakescale)*0.5
-            // 1이 한 바퀴 회전이다. 360도임
-            // CATransform은 한 번에 하나씩만 사용 가능하다.
             transform = CATransform3DMakeRotation(realscale*8, 0, 1, 0)
+        // 크기를 조절하는 경우
         default:
-            // 마지막 인자는 z좌표이고, 각 셀이 어떤 셀의 위에 있을지 아닐지를 결정한다. 아래 코드는 거리가 멀수록 화면에서 뒤로 가게끔 만든다(우리가 화면을 바라본다고 가정할 때). +값이라면 우리 눈 앞으로 다가오는 것이다.
             transform = CATransform3DTranslate(transform, 0, 0, -abs(dist/1000))
         }
         attributes.transform3D = transform
