@@ -10,11 +10,12 @@ import UIKit
 import SnapKit
 
 class CustomCVC: UICollectionViewCell {
-    
     static let identifier = "CustomCVC"
     
+    // MARK: - Properties
     let textLabel = UILabel()
     
+    // MARK: - View Life Cycles
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -32,6 +33,7 @@ class CustomCVC: UICollectionViewCell {
         textLabel.text = ""
     }
     
+    // MARK: - Methods
     func setUI() {
         textLabel.text = "---"
     }

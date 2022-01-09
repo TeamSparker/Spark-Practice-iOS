@@ -11,13 +11,14 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Properties
     let collectionViewFlowlayout = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowlayout)
     
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUI()
         setLayout()
         setCollcetionView()
         
@@ -25,14 +26,13 @@ class ViewController: UIViewController {
         print(UIApplication.shared.statusBarFrame.height)
         print(view.window?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 9)
     }
-
-    func setUI() {
-    }
     
+    // MARK: - Methods
     func setLayout() {
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
+            // TODO: - statusBarFrame 대체
             make.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
             make.leading.bottom.trailing.equalToSuperview()
         }
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - extension
 extension ViewController: UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 6
@@ -89,7 +90,7 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCVC.identifier, for: indexPath) as? CustomCVC else { return UICollectionViewCell() }
         
-        cell.textLabel.text = "안녕하신가"
+        cell.textLabel.text = "안녕하신가 \(indexPath.row)"
         cell.backgroundColor = .orange
         
         return cell

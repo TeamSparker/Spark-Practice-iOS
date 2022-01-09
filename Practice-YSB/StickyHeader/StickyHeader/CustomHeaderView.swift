@@ -10,11 +10,12 @@ import UIKit
 import SnapKit
 
 class CustomHeaderView: UICollectionReusableView {
-    
     static let identifier = "CustomHeaderView"
     
+    // MARK: - Properties
     let textLabel = UILabel()
     
+    // MARK: - View Life Cycles
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -32,6 +33,7 @@ class CustomHeaderView: UICollectionReusableView {
         textLabel.text = ""
     }
     
+    // MARK: - Methods
     func setUI() {
         textLabel.text = "Header"
         self.backgroundColor = .yellow
