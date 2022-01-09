@@ -10,18 +10,26 @@ import UIKit
 class CarouselVC: UIViewController {
     
     @IBOutlet weak var carouselCV: UICollectionView!
+    var isClicked: Bool = false
+
     
     let imageNames: [String] = ["cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addCollectionView()
+        addCollectionView(isClicked)
+        setDelegate()
         carouselCV.backgroundColor = .clear
         self.view.backgroundColor = .white
     }
     
-    func addCollectionView(){
+    func setDelegate() {
+        self.carouselCV?.delegate = self
+        self.carouselCV?.dataSource = self
+    }
+    
+    func addCollectionView(_ status: Bool){
 
         let layout = CarouselLayout()
         
@@ -34,13 +42,27 @@ class CarouselVC: UIViewController {
         layout.sideItemScale = 464/520
         layout.spacing = 12
         layout.sideItemAlpha = 0.4
-
+        layout.animationStatus = status
+        print(layout.animationStatus)
         carouselCV.collectionViewLayout = layout
             
-        self.carouselCV?.delegate = self
-        self.carouselCV?.dataSource = self
-
         self.carouselCV?.register(carouselCVC.self, forCellWithReuseIdentifier: "carouselCVC")
+        
+        self.carouselCV?.reloadData()
+    }
+    
+    @IBAction func touchChangeAnimation(_ sender: Any) {
+        if !isClicked {
+            isClicked = true
+            setAnimationStyle(isClicked)
+        } else {
+            isClicked = false
+            setAnimationStyle(isClicked)
+        }
+    }
+    
+    func setAnimationStyle(_ type: Bool) {
+        addCollectionView(type)
     }
 }
 

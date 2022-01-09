@@ -12,6 +12,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
     public var sideItemScale: CGFloat = 0.5
     public var sideItemAlpha: CGFloat = 0.5
     public var spacing: CGFloat = 10
+    public var animationStatus: Bool = true
 
     public var isPagingEnabled: Bool = false
     
@@ -84,21 +85,23 @@ class CarouselLayout: UICollectionViewFlowLayout {
         
         attributes.alpha = alpha
         
-        // fakescale은 중심에서 -1, 멀어졌을 때 1
-        var fakescale = (492/520-scale)*(520/28)
-        // realscale은 중심에서 0, 멀어졌을 때 -1
-        var realscale = (-1-fakescale)*0.5
-        
         let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
         let dist = attributes.frame.midX - visibleRect.midX
         var transform = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
         
-        // 1이 한 바퀴 회전이다. 360도임
-        // CATransform은 한 번에 하나씩만 사용 가능하다.
-//        transform = CATransform3DMakeRotation(realscale*8, 0, 1, 0)
-        
-        // 마지막 인자는 z좌표이고, 각 셀이 어떤 셀의 위에 있을지 아닐지를 결정한다. 아래 코드는 거리가 멀수록 화면에서 뒤로 가게끔 만든다(우리가 화면을 바라본다고 가정할 때). +값이라면 우리 눈 앞으로 다가오는 것이다.
-        transform = CATransform3DTranslate(transform, 0, 0, -abs(dist/1000))
+        switch animationStatus{
+        case true:
+            // fakescale은 중심에서 -1, 멀어졌을 때 1
+            let fakescale = (492/520-scale)*(520/28)
+            // realscale은 중심에서 0, 멀어졌을 때 -1
+            let realscale = (-1-fakescale)*0.5
+            // 1이 한 바퀴 회전이다. 360도임
+            // CATransform은 한 번에 하나씩만 사용 가능하다.
+            transform = CATransform3DMakeRotation(realscale*8, 0, 1, 0)
+        default:
+            // 마지막 인자는 z좌표이고, 각 셀이 어떤 셀의 위에 있을지 아닐지를 결정한다. 아래 코드는 거리가 멀수록 화면에서 뒤로 가게끔 만든다(우리가 화면을 바라본다고 가정할 때). +값이라면 우리 눈 앞으로 다가오는 것이다.
+            transform = CATransform3DTranslate(transform, 0, 0, -abs(dist/1000))
+        }
         attributes.transform3D = transform
         
         return attributes
@@ -109,7 +112,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
     // 우리는 각 셀의 center와, 컬렉션뷰의 center를 일치시키고자 한다.
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
 
-        
+            // 여기서 collectionView = self.collectionVIew의 의미를 모르겠어요. 컬렉션뷰는 항상 있는건데 왜 else로 빠지는걸까요?
             guard let collectionView = self.collectionView else {
                 let latestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
                 print(latestOffset)

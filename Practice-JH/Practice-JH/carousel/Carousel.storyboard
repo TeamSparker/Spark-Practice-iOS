@@ -37,21 +37,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXd-X8-ESE">
-                                <rect key="frame" x="0.0" y="195" width="375" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="ZMG-kC-tt3"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arT-Tm-BRu">
+                                <rect key="frame" x="101" y="104" width="172" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="애니메이션 전환"/>
+                                <connections>
+                                    <action selector="touchChangeAnimation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aeB-Yc-ItE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aXd-X8-ESE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6oO-iO-GiQ"/>
                             <constraint firstItem="TnH-cN-MST" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="196" id="AJ3-gN-48K"/>
-                            <constraint firstItem="TnH-cN-MST" firstAttribute="top" secondItem="aXd-X8-ESE" secondAttribute="bottom" id="Omn-28-N7T"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aXd-X8-ESE" secondAttribute="trailing" id="Ox0-V0-8Kc"/>
                             <constraint firstItem="TnH-cN-MST" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="R5Q-zh-528"/>
                             <constraint firstAttribute="trailing" secondItem="TnH-cN-MST" secondAttribute="trailing" id="RJS-6E-a6r"/>
                             <constraint firstAttribute="bottom" secondItem="TnH-cN-MST" secondAttribute="bottom" constant="96" id="oob-hk-2g2"/>
@@ -63,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.579710144927539" y="138.61607142857142"/>
+            <point key="canvasLocation" x="39.200000000000003" y="138.17733990147784"/>
         </scene>
     </scenes>
     <resources>
