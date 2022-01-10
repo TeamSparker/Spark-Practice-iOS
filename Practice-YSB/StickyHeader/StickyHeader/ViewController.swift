@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         
         setLayout()
         setCollcetionView()
-        setData()
+        setData(datalist: dummyDataList)
     }
     
     // MARK: - Methods
@@ -69,55 +69,58 @@ class ViewController: UIViewController {
         }
     }
     
-    func setData() {
+    func setData(datalist: Array<Dictionary<String, String>>) {
         var indexPath = 0
         var sectionCount = 0 /// section을 돌기 위한 변수
-//        var index = 0 /// 두번째로 dummyDataList를 돌기 위한 index
         
 //        print(dummyDataList[indexPath]["date"])
 //        print(type(of: dummyDataList[indexPath]["date"]))
 //        print(dummyDataList[indexPath])
         
-        while indexPath < dummyDataList.count {
+//        print(datalist)
+//        print(type(of: datalist))
+//        print(dummyDataList)
+//        print(type(of: dummyDataList))
+        while indexPath < datalist.count {
             if dateList.isEmpty {
-                dateList.append(dummyDataList[indexPath]["date"] as! String)
+                dateList.append(datalist[indexPath]["date"] as! String)
                 indexPath += 1
             } else {
-                let day: String = dummyDataList[indexPath]["date"] ?? ""
-                
+                let day: String = datalist[indexPath]["date"] ?? ""
+
                 if !(dateList.contains(day)) {
                     dateList.append(day)
                 }
-                
+
                 indexPath += 1
             }
         }
-        
+
         // TODO: - section별 리스트 생성
         while sectionCount < dateList.count {
             var index = 0
-            while index < dummyDataList.count && !dummyDataList.isEmpty && sectionCount != dateList.count {
-                
-                if dateList[sectionCount] == dummyDataList[index]["date"] {
+            while index < datalist.count && !datalist.isEmpty && sectionCount != dateList.count {
+
+                if dateList[sectionCount] == datalist[index]["date"] {
                     switch sectionCount {
                     case 0:
-                        firstList.append(dummyDataList[index])
+                        firstList.append(datalist[index])
                     case 1:
-                        secondList.append(dummyDataList[index])
+                        secondList.append(datalist[index])
                     case 2:
-                        thirdList.append(dummyDataList[index])
+                        thirdList.append(datalist[index])
                     case 3:
-                        fourthList.append(dummyDataList[index])
+                        fourthList.append(datalist[index])
                     case 4:
-                        fifthList.append(dummyDataList[index])
+                        fifthList.append(datalist[index])
                     case 5:
-                        sixthList.append(dummyDataList[index])
+                        sixthList.append(datalist[index])
                     case 6:
-                        seventhList.append(dummyDataList[index])
+                        seventhList.append(datalist[index])
                     default:
-                        seventhList.append(dummyDataList[index])
+                        seventhList.append(datalist[index])
                     }
-                    
+
                 }
                 index += 1
             }
@@ -230,11 +233,11 @@ extension ViewController: UICollectionViewDataSource {
         if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - scrollView.frame.size.height) {
             if index < 1 {
                 dummyDataList.append(contentsOf: newDummyDataList)
-                setData()
+                setData(datalist: newDummyDataList)
                 collectionView.reloadData()
                 index += 1
             } else {
-                print("끝임")
+                print("끝입니다")
             }
         }
     }
