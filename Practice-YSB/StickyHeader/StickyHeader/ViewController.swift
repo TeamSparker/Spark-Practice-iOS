@@ -11,6 +11,18 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Dummy Data
+    var dummyDataList: Array = [ ["date": "2022-11-11", "userName": "양수빈", "sparkTitle": "간식먹기", "sparkCount": "22"],
+                            ["date": "2022-11-11", "userName": "감자", "sparkTitle": "간식먹기222", "sparkCount": "1"],
+                            ["date": "2022-11-11", "userName": "김", "sparkTitle": "아아아간식먹기", "sparkCount": "6"],
+                            ["date": "2022-11-10", "userName": "옹", "sparkTitle": "아아 마셔", "sparkCount": "88"],
+                            ["date": "2022-11-10", "userName": "우와", "sparkTitle": "커피 홀짝", "sparkCount": "3"],
+                            ["date": "2022-11-9", "userName": "우와", "sparkTitle": "홀짝 커피", "sparkCount": "44"],
+                            ["date": "2022-11-9", "userName": "뭐지", "sparkTitle": "하하하하", "sparkCount": "2"],
+                            ["date": "2022-11-9", "userName": "하하", "sparkTitle": "쉽지않네", "sparkCount": "98"],
+                            ["date": "2022-11-9", "userName": "호호", "sparkTitle": "덤이데잍어", "sparkCount": "75"] ]
+    var dateList: [String] = []
+    
     // MARK: - Properties
     let collectionViewFlowlayout = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowlayout)
@@ -21,6 +33,7 @@ class ViewController: UIViewController {
         
         setLayout()
         setCollcetionView()
+        setData()
     }
     
     // MARK: - Methods
@@ -30,6 +43,28 @@ class ViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+    func setData() {
+        var indexPath = 0
+        
+        print(dummyDataList[indexPath]["date"])
+        print(type(of: dummyDataList[indexPath]["date"]))
+        print(dummyDataList[indexPath])
+        
+        while indexPath < dummyDataList.count {
+            if dateList.isEmpty {
+                dateList.append(dummyDataList[indexPath]["date"] as! String)
+                indexPath += 1
+            } else {
+                let day: String = dummyDataList[indexPath]["date"] ?? ""
+                if !(dateList.contains(day)) {
+                    dateList.append(day)
+                }
+                indexPath += 1
+            }
+        }
+        print("total dateList: ", dateList)
     }
     
     func setCollcetionView() {
@@ -57,35 +92,32 @@ class ViewController: UIViewController {
 // MARK: - extension
 extension ViewController: UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 6
+        return dateList.count
     }
 }
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return 2
-        case 2:
-            return 3
-        case 3:
-            return 4
-        case 4:
-            return 4
-        case 5:
-            return 8
-        default:
-            return 1
+        var itemCount = 0
+        var indexPath = 0
+        
+        while indexPath < dummyDataList.count {
+            if dateList[section] == dummyDataList[indexPath]["date"] {
+                itemCount += 1
+                indexPath += 1
+            } else {
+                indexPath += 1
+            }
         }
+        
+        return itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCVC.identifier, for: indexPath) as? CustomCVC else { return UICollectionViewCell() }
         
         cell.textLabel.text = "안녕하신가 \(indexPath.row)"
-        cell.backgroundColor = .orange
+        cell.backgroundColor = .white
         
         return cell
     }
@@ -94,6 +126,7 @@ extension ViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CustomHeaderView", for: indexPath) as? CustomHeaderView else { return UICollectionReusableView() }
         
         cell.textLabel.text = "Header \(indexPath.section)"
+        cell.backgroundColor = .darkGray
         
         return cell
     }

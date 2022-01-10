@@ -36,14 +36,13 @@ class CustomHeaderView: UICollectionReusableView {
     // MARK: - Methods
     func setUI() {
         textLabel.text = "Header"
-        self.backgroundColor = .yellow
     }
     
     func setLayout() {
         addSubview(textLabel)
         
         textLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
         }
     }

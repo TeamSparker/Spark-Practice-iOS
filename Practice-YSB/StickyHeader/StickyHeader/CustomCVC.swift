@@ -42,7 +42,7 @@ class CustomCVC: UICollectionViewCell {
         addSubview(textLabel)
         
         textLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
         }
     }
