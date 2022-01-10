@@ -13,7 +13,7 @@ class CustomHeaderView: UICollectionReusableView {
     static let identifier = "CustomHeaderView"
     
     // MARK: - Properties
-    let textLabel = UILabel()
+    let dateLabel = UILabel()
     
     // MARK: - View Life Cycles
     override init(frame: CGRect) {
@@ -30,18 +30,19 @@ class CustomHeaderView: UICollectionReusableView {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        textLabel.text = ""
+        dateLabel.text = ""
     }
     
     // MARK: - Methods
     func setUI() {
-        textLabel.text = "Header"
+        dateLabel.text = "Header"
+        dateLabel.font = .systemFont(ofSize: 30)
     }
     
     func setLayout() {
-        addSubview(textLabel)
+        addSubview(dateLabel)
         
-        textLabel.snp.makeConstraints { make in
+        dateLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
         }

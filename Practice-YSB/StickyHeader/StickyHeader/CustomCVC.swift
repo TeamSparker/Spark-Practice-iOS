@@ -13,7 +13,8 @@ class CustomCVC: UICollectionViewCell {
     static let identifier = "CustomCVC"
     
     // MARK: - Properties
-    let textLabel = UILabel()
+    let titleLabel = UILabel()
+    let userNameLabel = UILabel()
     
     // MARK: - View Life Cycles
     override init(frame: CGRect) {
@@ -30,20 +31,32 @@ class CustomCVC: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        textLabel.text = ""
+        titleLabel.text = "---"
+        userNameLabel.text = "사용자이름"
     }
     
     // MARK: - Methods
     func setUI() {
-        textLabel.text = "---"
+        titleLabel.text = "---"
+        userNameLabel.text = "사용자이름"
+        
+        titleLabel.font = .systemFont(ofSize: 20)
+        userNameLabel.font = .systemFont(ofSize: 14)
+        userNameLabel.textColor = .gray
     }
     
     func setLayout() {
-        addSubview(textLabel)
+        addSubview(titleLabel)
+        addSubview(userNameLabel)
         
-        textLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(16)
+        }
+        
+        userNameLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
         }
     }
 }

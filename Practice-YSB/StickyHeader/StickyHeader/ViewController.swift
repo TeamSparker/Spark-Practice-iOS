@@ -12,20 +12,44 @@ import SnapKit
 class ViewController: UIViewController {
     
     // MARK: - Dummy Data
-    var dummyDataList: Array = [ ["date": "2022-11-11", "userName": "양수빈", "sparkTitle": "간식먹기", "sparkCount": "22"],
-                            ["date": "2022-11-11", "userName": "감자", "sparkTitle": "간식먹기222", "sparkCount": "1"],
-                            ["date": "2022-11-11", "userName": "김", "sparkTitle": "아아아간식먹기", "sparkCount": "6"],
-                            ["date": "2022-11-10", "userName": "옹", "sparkTitle": "아아 마셔", "sparkCount": "88"],
-                            ["date": "2022-11-10", "userName": "우와", "sparkTitle": "커피 홀짝", "sparkCount": "3"],
-                            ["date": "2022-11-9", "userName": "우와", "sparkTitle": "홀짝 커피", "sparkCount": "44"],
-                            ["date": "2022-11-9", "userName": "뭐지", "sparkTitle": "하하하하", "sparkCount": "2"],
-                            ["date": "2022-11-9", "userName": "하하", "sparkTitle": "쉽지않네", "sparkCount": "98"],
-                            ["date": "2022-11-9", "userName": "호호", "sparkTitle": "덤이데잍어", "sparkCount": "75"] ]
+    var dummyDataList: Array = [ ["date": "2022-11-11", "userName": "양수빈", "sparkTitle": "간식먹기", "sparkCount": "1"],
+                            ["date": "2022-11-11", "userName": "감자", "sparkTitle": "간식먹기222", "sparkCount": "2"],
+                            ["date": "2022-11-11", "userName": "김", "sparkTitle": "아아아간식먹기", "sparkCount": "3"],
+                            ["date": "2022-11-10", "userName": "옹", "sparkTitle": "아아 마셔", "sparkCount": "4"],
+                            ["date": "2022-11-10", "userName": "우와", "sparkTitle": "커피 홀짝", "sparkCount": "5"],
+                            ["date": "2022-11-9", "userName": "우와", "sparkTitle": "홀짝 커피", "sparkCount": "6"],
+                            ["date": "2022-11-9", "userName": "뭐지", "sparkTitle": "하하하하", "sparkCount": "7"],
+                            ["date": "2022-11-9", "userName": "하하", "sparkTitle": "쉽지않네", "sparkCount": "8"],
+                            ["date": "2022-11-9", "userName": "호호", "sparkTitle": "덤이데잍어", "sparkCount": "9"],
+                            ["date": "2022-11-7", "userName": "s", "sparkTitle": "덤이데sdfdfdfdf잍어", "sparkCount": "10"],
+                            ["date": "2022-11-7", "userName": "호sgggg호", "sparkTitle": "덤이sddd데잍어", "sparkCount": "11"] ]
+    
+    var newDummyDataList: Array = [ ["date": "2022-11-7", "userName": "양수빈", "sparkTitle": "간식먹기", "sparkCount": "12"],
+                            ["date": "2022-11-7", "userName": "감자", "sparkTitle": "간식먹기222", "sparkCount": "13"],
+                            ["date": "2022-11-4", "userName": "김", "sparkTitle": "아아아간식먹기", "sparkCount": "14"],
+                            ["date": "2022-11-4", "userName": "옹", "sparkTitle": "아아 마셔", "sparkCount": "15"],
+                            ["date": "2022-11-3", "userName": "우와", "sparkTitle": "커피 홀짝", "sparkCount": "16"],
+                            ["date": "2022-11-3", "userName": "우와", "sparkTitle": "홀짝 커피", "sparkCount": "17"],
+                            ["date": "2022-11-3", "userName": "뭐지", "sparkTitle": "하하하하", "sparkCount": "18"],
+                            ["date": "2022-11-3", "userName": "하하", "sparkTitle": "쉽지않네", "sparkCount": "19"],
+                            ["date": "2022-11-3", "userName": "호호", "sparkTitle": "덤이데잍어", "sparkCount": "20"],
+                            ["date": "2022-11-2", "userName": "s", "sparkTitle": "덤이데sdfdfdfdf잍어", "sparkCount": "21"],
+                            ["date": "2022-11-2", "userName": "호sgggg호", "sparkTitle": "덤이sddd데잍어", "sparkCount": "22"] ]
+    
     var dateList: [String] = []
+    
+    var firstList: [Any] = []
+    var secondList: Array<Any> = []
+    var thirdList: Array<Any> = []
+    var fourthList: Array<Any> = []
+    var fifthList: Array<Any> = []
+    var sixthList: Array<Any> = []
+    var seventhList: Array<Any> = []
     
     // MARK: - Properties
     let collectionViewFlowlayout = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowlayout)
+    var index = 0
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
@@ -47,10 +71,12 @@ class ViewController: UIViewController {
     
     func setData() {
         var indexPath = 0
+        var sectionCount = 0 /// section을 돌기 위한 변수
+//        var index = 0 /// 두번째로 dummyDataList를 돌기 위한 index
         
-        print(dummyDataList[indexPath]["date"])
-        print(type(of: dummyDataList[indexPath]["date"]))
-        print(dummyDataList[indexPath])
+//        print(dummyDataList[indexPath]["date"])
+//        print(type(of: dummyDataList[indexPath]["date"]))
+//        print(dummyDataList[indexPath])
         
         while indexPath < dummyDataList.count {
             if dateList.isEmpty {
@@ -58,13 +84,54 @@ class ViewController: UIViewController {
                 indexPath += 1
             } else {
                 let day: String = dummyDataList[indexPath]["date"] ?? ""
+                
                 if !(dateList.contains(day)) {
                     dateList.append(day)
                 }
+                
                 indexPath += 1
             }
         }
-        print("total dateList: ", dateList)
+        
+        // TODO: - section별 리스트 생성
+        while sectionCount < dateList.count {
+            var index = 0
+            while index < dummyDataList.count && !dummyDataList.isEmpty && sectionCount != dateList.count {
+                
+                if dateList[sectionCount] == dummyDataList[index]["date"] {
+                    switch sectionCount {
+                    case 0:
+                        firstList.append(dummyDataList[index])
+                    case 1:
+                        secondList.append(dummyDataList[index])
+                    case 2:
+                        thirdList.append(dummyDataList[index])
+                    case 3:
+                        fourthList.append(dummyDataList[index])
+                    case 4:
+                        fifthList.append(dummyDataList[index])
+                    case 5:
+                        sixthList.append(dummyDataList[index])
+                    case 6:
+                        seventhList.append(dummyDataList[index])
+                    default:
+                        seventhList.append(dummyDataList[index])
+                    }
+                    
+                }
+                index += 1
+            }
+            sectionCount += 1
+        }
+        
+//        print("1: ", firstList)
+//        print("2: ", secondList)
+//        print("2: ", thirdList)
+//        print("4: ", fourthList)
+//        print("5: ", fifthList)
+//        print("6: ", sixthList)
+//        print("7: ", seventhList)
+//        print("-------------------------------------------------------")
     }
     
     func setCollcetionView() {
@@ -116,7 +183,30 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCVC.identifier, for: indexPath) as? CustomCVC else { return UICollectionViewCell() }
         
-        cell.textLabel.text = "안녕하신가 \(indexPath.row)"
+        var alist: [String:String] = [:]
+        
+        // TODO: - section별 데이터 넣기
+        switch indexPath.section {
+        case 0:
+            alist = firstList[indexPath.item] as! [String : String]
+        case 1:
+            alist = secondList[indexPath.item] as! [String : String]
+        case 2:
+            alist = thirdList[indexPath.item] as! [String : String]
+        case 3:
+            alist = fourthList[indexPath.item] as! [String : String]
+        case 4:
+            alist = fifthList[indexPath.item] as! [String : String]
+        case 5:
+            alist = sixthList[indexPath.item] as! [String : String]
+        case 6:
+            alist = seventhList[indexPath.item] as! [String : String]
+        default:
+            alist = firstList[indexPath.item] as! [String : String]
+        }
+        
+        cell.titleLabel.text = "\(String(describing: alist["sparkCount"]!))"
+        cell.userNameLabel.text = "\(String(describing: alist["userName"]!))"
         cell.backgroundColor = .white
         
         return cell
@@ -124,9 +214,8 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CustomHeaderView", for: indexPath) as? CustomHeaderView else { return UICollectionReusableView() }
-        
-        cell.textLabel.text = "Header \(indexPath.section)"
-        cell.backgroundColor = .darkGray
+        cell.dateLabel.text = "\(dateList[indexPath.section])"
+        cell.backgroundColor = .systemIndigo
         
         return cell
     }
@@ -134,7 +223,20 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let width = UIScreen.main.bounds.width
         
-        return CGSize(width: width, height: 80)
+        return CGSize(width: width, height: 60)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - scrollView.frame.size.height) {
+            if index < 1 {
+                dummyDataList.append(contentsOf: newDummyDataList)
+                setData()
+                collectionView.reloadData()
+                index += 1
+            } else {
+                print("끝임")
+            }
+        }
     }
 }
 
