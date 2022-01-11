@@ -36,8 +36,11 @@ class ViewController: UIViewController {
                             ["date": "2022-11-2", "userName": "s", "sparkTitle": "덤이데sdfdfdfdf잍어", "sparkCount": "21"],
                             ["date": "2022-11-2", "userName": "호sgggg호", "sparkTitle": "덤이sddd데잍어", "sparkCount": "22"] ]
     
+    // MARK: - Properties
+    let collectionViewFlowlayout = UICollectionViewFlowLayout()
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowlayout)
+    var index = 0
     var dateList: [String] = []
-    
     var firstList: [Any] = []
     var secondList: [Any] = []
     var thirdList: [Any] = []
@@ -45,11 +48,6 @@ class ViewController: UIViewController {
     var fifthList: [Any] = []
     var sixthList: [Any] = []
     var seventhList: [Any] = []
-    
-    // MARK: - Properties
-    let collectionViewFlowlayout = UICollectionViewFlowLayout()
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowlayout)
-    var index = 0
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
