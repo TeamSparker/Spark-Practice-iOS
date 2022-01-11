@@ -39,12 +39,12 @@ class ViewController: UIViewController {
     var dateList: [String] = []
     
     var firstList: [Any] = []
-    var secondList: Array<Any> = []
-    var thirdList: Array<Any> = []
-    var fourthList: Array<Any> = []
-    var fifthList: Array<Any> = []
-    var sixthList: Array<Any> = []
-    var seventhList: Array<Any> = []
+    var secondList: [Any] = []
+    var thirdList: [Any] = []
+    var fourthList: [Any] = []
+    var fifthList: [Any] = []
+    var sixthList: [Any] = []
+    var seventhList: [Any] = []
     
     // MARK: - Properties
     let collectionViewFlowlayout = UICollectionViewFlowLayout()
