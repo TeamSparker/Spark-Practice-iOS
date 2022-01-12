@@ -65,6 +65,13 @@ class ViewController: UIViewController {
         loginKakaoAccount()
     }
     
+    @IBAction func touchPresentCarousel(_ sender: Any) {
+        let myTabVC = UIStoryboard.init(name: "Carousel", bundle: nil)
+        guard let nextVC = myTabVC.instantiateViewController(identifier: "CarouselVC") as? CarouselVC else {
+            return
+        }
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
 }
 

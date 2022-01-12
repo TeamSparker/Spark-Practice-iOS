@@ -15,6 +15,10 @@
 		EB88494F27857B50008823B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB88494E27857B50008823B7 /* Assets.xcassets */; };
 		EB88495227857B50008823B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB88495027857B50008823B7 /* LaunchScreen.storyboard */; };
 		EB88495E2786110A008823B7 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88495D2786110A008823B7 /* LogoutViewController.swift */; };
+		EBD3E1D0278783520088FB97 /* Carousel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD3E1CF278783520088FB97 /* Carousel.storyboard */; };
+		EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D1278783760088FB97 /* CarouselVC.swift */; };
+		EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D827878E330088FB97 /* carouselCVC.swift */; };
+		EBD3E1DB27883CE40088FB97 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		EB88495127857B50008823B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB88495327857B50008823B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB88495D2786110A008823B7 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		EBD3E1CF278783520088FB97 /* Carousel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carousel.storyboard; sourceTree = "<group>"; };
+		EBD3E1D1278783760088FB97 /* CarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselVC.swift; sourceTree = "<group>"; };
+		EBD3E1D827878E330088FB97 /* carouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselCVC.swift; sourceTree = "<group>"; };
+		EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
 		F3C2104A10DF938CAC0A82CE /* Pods_Practice_JH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice_JH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,11 +95,31 @@
 				EB88494927857B4B008823B7 /* ViewController.swift */,
 				EB88494B27857B4B008823B7 /* Main.storyboard */,
 				EB88495D2786110A008823B7 /* LogoutViewController.swift */,
+				EBD3E1CE278783360088FB97 /* carousel */,
 				EB88494E27857B50008823B7 /* Assets.xcassets */,
 				EB88495027857B50008823B7 /* LaunchScreen.storyboard */,
 				EB88495327857B50008823B7 /* Info.plist */,
 			);
 			path = "Practice-JH";
+			sourceTree = "<group>";
+		};
+		EBD3E1CE278783360088FB97 /* carousel */ = {
+			isa = PBXGroup;
+			children = (
+				EBD3E1CF278783520088FB97 /* Carousel.storyboard */,
+				EBD3E1D727878B420088FB97 /* CarouselCVC */,
+				EBD3E1D1278783760088FB97 /* CarouselVC.swift */,
+				EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */,
+			);
+			path = carousel;
+			sourceTree = "<group>";
+		};
+		EBD3E1D727878B420088FB97 /* CarouselCVC */ = {
+			isa = PBXGroup;
+			children = (
+				EBD3E1D827878E330088FB97 /* carouselCVC.swift */,
+			);
+			path = CarouselCVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD3E1D0278783520088FB97 /* Carousel.storyboard in Resources */,
 				EB88495227857B50008823B7 /* LaunchScreen.storyboard in Resources */,
 				EB88494F27857B50008823B7 /* Assets.xcassets in Resources */,
 				EB88494D27857B4B008823B7 /* Main.storyboard in Resources */,
@@ -210,7 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB88494A27857B4B008823B7 /* ViewController.swift in Sources */,
+				EBD3E1DB27883CE40088FB97 /* CarouselLayout.swift in Sources */,
 				EB88494627857B4B008823B7 /* AppDelegate.swift in Sources */,
+				EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */,
+				EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */,
 				EB88495E2786110A008823B7 /* LogoutViewController.swift in Sources */,
 				EB88494827857B4B008823B7 /* SceneDelegate.swift in Sources */,
 			);
