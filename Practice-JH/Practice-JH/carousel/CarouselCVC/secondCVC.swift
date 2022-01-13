@@ -1,13 +1,13 @@
 //
-//  carouselCVC.swift
+//  secondCVC.swift
 //  Practice-JH
 //
-//  Created by Junho Lee on 2022/01/07.
+//  Created by Junho Lee on 2022/01/12.
 //
 
 import UIKit
 
-class carouselCVC: UICollectionViewCell {
+class secondCVC: UICollectionViewCell {
     let customView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8E1581A0D8B8074E5094BDB5 /* Pods_Practice_JH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C2104A10DF938CAC0A82CE /* Pods_Practice_JH.framework */; };
+		EB625E61278C96AF00C43DE9 /* CarouselContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625E60278C96AF00C43DE9 /* CarouselContainerView.swift */; };
+		EB625E63278E279500C43DE9 /* secondCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625E62278E279500C43DE9 /* secondCVC.swift */; };
+		EB625E65278E8B4D00C43DE9 /* thirdCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625E64278E8B4D00C43DE9 /* thirdCVC.swift */; };
+		EB625E67278EAB0000C43DE9 /* firstCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625E66278EAB0000C43DE9 /* firstCVC.swift */; };
 		EB88494627857B4B008823B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88494527857B4B008823B7 /* AppDelegate.swift */; };
 		EB88494827857B4B008823B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88494727857B4B008823B7 /* SceneDelegate.swift */; };
 		EB88494A27857B4B008823B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88494927857B4B008823B7 /* ViewController.swift */; };
@@ -17,13 +21,16 @@
 		EB88495E2786110A008823B7 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88495D2786110A008823B7 /* LogoutViewController.swift */; };
 		EBD3E1D0278783520088FB97 /* Carousel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD3E1CF278783520088FB97 /* Carousel.storyboard */; };
 		EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D1278783760088FB97 /* CarouselVC.swift */; };
-		EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1D827878E330088FB97 /* carouselCVC.swift */; };
 		EBD3E1DB27883CE40088FB97 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		828D371EE834245581318F0A /* Pods-Practice-JH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice-JH.debug.xcconfig"; path = "Target Support Files/Pods-Practice-JH/Pods-Practice-JH.debug.xcconfig"; sourceTree = "<group>"; };
 		AD647D329912BCC2792AB3E1 /* Pods-Practice-JH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice-JH.release.xcconfig"; path = "Target Support Files/Pods-Practice-JH/Pods-Practice-JH.release.xcconfig"; sourceTree = "<group>"; };
+		EB625E60278C96AF00C43DE9 /* CarouselContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselContainerView.swift; sourceTree = "<group>"; };
+		EB625E62278E279500C43DE9 /* secondCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondCVC.swift; sourceTree = "<group>"; };
+		EB625E64278E8B4D00C43DE9 /* thirdCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdCVC.swift; sourceTree = "<group>"; };
+		EB625E66278EAB0000C43DE9 /* firstCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstCVC.swift; sourceTree = "<group>"; };
 		EB88494227857B4B008823B7 /* Practice-JH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-JH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB88494527857B4B008823B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB88494727857B4B008823B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +42,6 @@
 		EB88495D2786110A008823B7 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		EBD3E1CF278783520088FB97 /* Carousel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carousel.storyboard; sourceTree = "<group>"; };
 		EBD3E1D1278783760088FB97 /* CarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselVC.swift; sourceTree = "<group>"; };
-		EBD3E1D827878E330088FB97 /* carouselCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselCVC.swift; sourceTree = "<group>"; };
 		EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
 		F3C2104A10DF938CAC0A82CE /* Pods_Practice_JH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice_JH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +114,7 @@
 			children = (
 				EBD3E1CF278783520088FB97 /* Carousel.storyboard */,
 				EBD3E1D727878B420088FB97 /* CarouselCVC */,
+				EB625E60278C96AF00C43DE9 /* CarouselContainerView.swift */,
 				EBD3E1D1278783760088FB97 /* CarouselVC.swift */,
 				EBD3E1DA27883CE40088FB97 /* CarouselLayout.swift */,
 			);
@@ -117,7 +124,9 @@
 		EBD3E1D727878B420088FB97 /* CarouselCVC */ = {
 			isa = PBXGroup;
 			children = (
-				EBD3E1D827878E330088FB97 /* carouselCVC.swift */,
+				EB625E66278EAB0000C43DE9 /* firstCVC.swift */,
+				EB625E62278E279500C43DE9 /* secondCVC.swift */,
+				EB625E64278E8B4D00C43DE9 /* thirdCVC.swift */,
 			);
 			path = CarouselCVC;
 			sourceTree = "<group>";
@@ -238,12 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB625E63278E279500C43DE9 /* secondCVC.swift in Sources */,
 				EB88494A27857B4B008823B7 /* ViewController.swift in Sources */,
 				EBD3E1DB27883CE40088FB97 /* CarouselLayout.swift in Sources */,
+				EB625E61278C96AF00C43DE9 /* CarouselContainerView.swift in Sources */,
 				EB88494627857B4B008823B7 /* AppDelegate.swift in Sources */,
-				EBD3E1D927878E330088FB97 /* carouselCVC.swift in Sources */,
+				EB625E67278EAB0000C43DE9 /* firstCVC.swift in Sources */,
 				EBD3E1D2278783760088FB97 /* CarouselVC.swift in Sources */,
 				EB88495E2786110A008823B7 /* LogoutViewController.swift in Sources */,
+				EB625E65278E8B4D00C43DE9 /* thirdCVC.swift in Sources */,
 				EB88494827857B4B008823B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
