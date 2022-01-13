@@ -12,7 +12,10 @@ class CarouselVC: UIViewController {
     @IBOutlet weak var carouselCV: UICollectionView!
     private var isClicked: Bool = false
 
-    let imageNames: [String] = ["cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four","cell_one","cell_two","cell_three","cell_four"]
+    let firstViewButton = MyButton()
+    let secondViewButton = MyButton()
+    let thirdViewButton = MyButton()
+    var selectedItem = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +26,10 @@ class CarouselVC: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    func setDelegate() {
-        self.carouselCV?.delegate = self
-        self.carouselCV?.dataSource = self
+        addSubviewss(firstViewButton, secondViewButton, thirdViewButton)
+        
+        //버튼 관련
+        setButtons()
     }
     
     func addCollectionView(_ status: Bool){
@@ -64,6 +68,22 @@ class CarouselVC: UIViewController {
         thirdViewButton.setTitle("캐러셀 3", for: .normal)
         thirdViewButton.setTitleColor(.black, for: .normal)
         thirdViewButton.setTitleColor(.gray, for: .highlighted)
+        
+        secondViewButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(150)
+            make.centerX.equalToSuperview()
+        }
+        
+        firstViewButton.snp.makeConstraints { make in
+            make.centerY.equalTo(secondViewButton.snp.centerY)
+            make.trailing.equalTo(secondViewButton.snp.leading).offset(-40)
+        }
+        
+        thirdViewButton.snp.makeConstraints { make in
+            make.centerY.equalTo(secondViewButton.snp.centerY)
+            make.leading.equalTo(secondViewButton.snp.trailing).offset(40)
+        }
+    }
     func addSubviewss(_ views: UIView...) {
         for view in views {
             self.view.addSubview(view)
