@@ -7,8 +7,9 @@ target 'Practice-JH' do
 
   # Pods for Practice-JH
   pod 'KakaoSDKUser' # 카카오 로그인
-  pod 'KakaoSDKUser' # 사용자 관리
   pod 'KakaoSDKCommon' # 카카오 일반
   pod 'JJFloatingActionButton' # 플로팅버튼
+  pod 'KakaoSDKAuth' # 사용자 관리
+  pod 'SnapKit', '~> 5.0.0'
 
 end

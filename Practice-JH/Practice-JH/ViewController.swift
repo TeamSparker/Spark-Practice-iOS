@@ -67,6 +67,7 @@ class ViewController: UIViewController {
     @IBAction func touchAccountLogin(_ sender: Any) {
         loginKakaoAccount()
     }
+    @IBAction func touchPresentCarousel(_ sender: Any) {
 }
 
 extension ViewController {

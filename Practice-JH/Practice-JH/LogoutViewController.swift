@@ -27,7 +27,6 @@ class LogoutViewController: UIViewController {
         super.viewDidLoad()
         
         setText()
-        // Do any additional setup after loading the view.
     }
     @IBAction func logoutClicked(_ sender: Any) {
         // ✅ 로그아웃 : 로그아웃은 API 요청의 성공 여부와 관계없이 토큰을 삭제 처리한다는 점에 유의합니다.
