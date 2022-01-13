@@ -17,4 +17,6 @@ class CarouselContainerView: UIView {
     }
     */
 
+class MyButton: UIButton {
+    public var statusCV: Int?
 }
