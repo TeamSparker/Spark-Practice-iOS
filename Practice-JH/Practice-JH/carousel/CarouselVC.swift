@@ -142,6 +142,34 @@ class CarouselVC: UIViewController {
         }
     }
     
+    @objc func changeCollectionView(sender: MyButton) {
+        let status: Int = (sender.statusCV)!
+        switch status {
+        case 0:
+            firstView.isHidden = false
+            print(self.firstView.frame.width)
+            secondView.isHidden = true
+            thirdView.isHidden = true
+            selectedItem = 1
+            print(firstView.layer.name)
+//            firstView.position.z
+        case 1:
+            firstView.isHidden = true
+            secondView.isHidden = false
+            thirdView.isHidden = true
+            selectedItem = 2
+            secondView.collectionView.reloadData()
+            firstView.collectionView.reloadData()
+            thirdView.collectionView.reloadData()
+//            secondVIew.position.z
+        default:
+            firstView.isHidden = true
+            secondView.isHidden = true
+            thirdView.isHidden = false
+            selectedItem = 3
+//            thirdView.position.z
+        }
+    }
 }
 
 extension CarouselVC: UICollectionViewDelegate, UICollectionViewDataSource {
