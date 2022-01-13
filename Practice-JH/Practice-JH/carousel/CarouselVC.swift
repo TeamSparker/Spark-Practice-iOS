@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import SnapKit
+
+enum carouselCase{
+    case firstView
+    case secondView
+    case thirdView
+}
 
 class CarouselVC: UIViewController {
     
@@ -17,23 +24,33 @@ class CarouselVC: UIViewController {
     let thirdViewButton = MyButton()
     var selectedItem = 3
     
+    
+    let firstView = CarouselContainerView(putIdentifier: "firstView")
+    let secondView = CarouselContainerView(putIdentifier: "secondView")
+    let thirdView = CarouselContainerView(putIdentifier: "thirdView")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addCollectionView(isClicked)
+//        addCollectionView(isClicked)
         setDelegate()
-        carouselCV.backgroundColor = .clear
+//        carouselCV.backgroundColor = .clear
         self.view.backgroundColor = .white
-    }
-    
+        
         addSubviewss(firstViewButton, secondViewButton, thirdViewButton)
         
         //버튼 관련
         setButtons()
+        
+        //캐러셀 컨테이너 관련
+        addContainerViews(firstView, secondView, thirdView)
     }
     
-    func addCollectionView(_ status: Bool){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+    }
+    
         let layout = CarouselLayout()
         
         // TODO: 컬렉션뷰 자체의 비율을 고정하는 작업 하기
@@ -84,6 +101,23 @@ class CarouselVC: UIViewController {
             make.leading.equalTo(secondViewButton.snp.trailing).offset(40)
         }
     }
+    
+    func addContainerViews(_ views: UIView...) {
+        for view in views {
+            self.view.addSubview(view)
+            view.snp.makeConstraints { make in
+                make.leading.trailing.equalToSuperview()
+                make.top.equalToSuperview().offset(300)
+                make.bottom.equalToSuperview().offset(-95)
+            }
+        }
+    }
+    
+    func setContainerViews() {
+        secondView.backgroundColor = .blue
+        thirdView.backgroundColor = .purple
+    }
+    
     func addSubviewss(_ views: UIView...) {
         for view in views {
             self.view.addSubview(view)
