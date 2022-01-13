@@ -48,6 +48,33 @@ class CarouselVC: UIViewController {
         self.carouselCV?.register(carouselCVC.self, forCellWithReuseIdentifier: "carouselCVC")
         
         self.carouselCV?.reloadData()
+    func setButtons() {
+        firstViewButton.statusCV = 0
+        firstViewButton.backgroundColor = .clear
+        firstViewButton.setTitle("캐러셀 1", for: .normal)
+        firstViewButton.setTitleColor(.black, for: .normal)
+        firstViewButton.setTitleColor(.gray, for: .highlighted)
+        secondViewButton.statusCV = 1
+        secondViewButton.backgroundColor = .clear
+        secondViewButton.setTitle("캐러셀 2", for: .normal)
+        secondViewButton.setTitleColor(.black, for: .normal)
+        secondViewButton.setTitleColor(.gray, for: .highlighted)
+        thirdViewButton.statusCV = 2
+        thirdViewButton.backgroundColor = .clear
+        thirdViewButton.setTitle("캐러셀 3", for: .normal)
+        thirdViewButton.setTitleColor(.black, for: .normal)
+        thirdViewButton.setTitleColor(.gray, for: .highlighted)
+    func addSubviewss(_ views: UIView...) {
+        for view in views {
+            self.view.addSubview(view)
+        }
+    }
+    
+    func addTargets(_ buttons: MyButton...) {
+        for button in buttons {
+            button.addTarget(self, action: #selector(changeCollectionView), for: .touchUpInside)
+        }
+    }
     }
     
     // 버튼을 터치함에 따라서 animationStatus을 변경해준다.
